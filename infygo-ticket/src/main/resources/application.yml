@@ -1,0 +1,10 @@
+resilience4j:
+  circuitbreaker:
+    instances:
+      ticketService:
+        failure-rate-threshold: 30
+        ring-buffer-size-in-closed-state: 10
+        ring-buffer-size-in-half-open-state: 5
+        wait-duration-in-open-state: 10s
+        automatic-transition-from-open-to-half-open-enabled: true
+        

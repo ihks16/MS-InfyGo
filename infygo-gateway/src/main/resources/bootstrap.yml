@@ -1,0 +1,9 @@
+server:
+ port: 9000
+
+spring:
+  application:
+    name: infygo-gateway
+  cloud:
+    consul:
+      host: localhost

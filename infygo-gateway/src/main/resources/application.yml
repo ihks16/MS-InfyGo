@@ -1,0 +1,23 @@
+spring: 
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: infygo-user
+          uri: lb://infygo-user
+          predicates:
+            - Path= /user,/present/name/*/phone/**,/login,/user/**
+        - id: infygo-flight
+          uri: lb://infygo-flight
+          predicates:
+            - Path= /flight,/flight/source/city/**,/flight/destination/city/**,/flight/search/source/*/destination/*/date/**,/flight/flightId/**
+        - id: infygo-card
+          uri: lb://infygo-card
+          predicates:
+            - Path= /payment
+        - id: infygo-ticket
+          uri: lb://infygo-ticket
+          predicates:
+            - Path= /ticket/book/flightId/*/userId/**

@@ -1,0 +1,19 @@
+server:
+  port: 9300
+spring:
+  application:
+    name: infygo-user
+  cloud:
+    consul:
+      host: localhost
+      discovery:
+        hostname: localhost
+      config:
+        data-key: data
+        enabled: true
+        fail-fast: false
+        prefix: config
+        profile-separator: '::'
+        default-context: application
+        format: YAML
+      
